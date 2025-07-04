@@ -7,3 +7,5 @@ chainlit
 python-dotenv
 
 openai
+
+griffe
