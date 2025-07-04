@@ -6,3 +6,4 @@ chainlit
 
 python-dotenv
 
+openai
