@@ -3,3 +3,7 @@ gspread
 google-auth
 
 chainlit
+
+python-dotenv
+
+git+https://github.com/openai/openai-agents-python.git
