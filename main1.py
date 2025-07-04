@@ -6,9 +6,19 @@ import chainlit as cl
 from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
 from agents.run import RunConfig
 import gspread
+import json
+from google.oauth2.service_account import Credentials
+
+# Load the JSON from the env variable
+service_account_info = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"])
+
+# Create credentials
+creds = Credentials.from_service_account_info(service_account_info)
+
+# Authorize gspread
+gc = gspread.authorize(creds)
 
 # Authenticate with Google Sheets
-gc = gspread.service_account(filename="credentials.json")
 sh = gc.open("MyExpenses")
 worksheet = sh.sheet1
 
