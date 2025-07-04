@@ -138,3 +138,6 @@ async def main(message: cl.Message):
     await cl.Message(content=response_content).send()
     cl.user_session.set("chat_history", result.to_input_list())
 
+# 🚀 THIS LINE keeps Chainlit running
+if __name__ == "__main__":
+    cl.run()
